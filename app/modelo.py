@@ -6,13 +6,14 @@ modelo de dados para o pydantic/mongoDB
 
 
 # histórico
+2022-06-02 	LaunchesEventsSchema: schema para validar campos launches e events em Artigo
 2022-06-01 	v.1
 2022-05-30 	primeira versão
 
 '''
-from pydantic import BaseModel, Field #, Dict
+from pydantic import BaseModel, Field
 from bson import ObjectId
-from typing import Optional, List, Dict
+from typing import Optional, List
 
 
 class PyObjectId(ObjectId):
@@ -34,9 +35,17 @@ class PyObjectId(ObjectId):
 		field_schema.update(type="string")
 
 
+class LaunchesEventsSchema(BaseModel):
+	'''
+	schema para validar campos launches e events em Artigo
+	'''
+	id          : str  = Field(None)
+	provider    : str  = Field(None)
+
+
 class Artigo(BaseModel):
 	'''
-	classe-schema para validar dados recebidos via API
+	schema para validar dados recebidos via API
 	'''
 	id: Optional[PyObjectId] = Field(alias = '_id')
 	featured    : bool = Field(False)
@@ -47,6 +56,6 @@ class Artigo(BaseModel):
 	summary     : str  = Field(None)
 	publishedAt : str  = Field(None)
 	updatedAt   : str  = Field(None)
-	launches    : List[ Dict[ str, str] ] = None
-	events      : List[ Dict[ str, str] ] = None
+	launches    : List[ LaunchesEventsSchema ] = Field(None)
+	events      : List[ LaunchesEventsSchema ] = Field(None)
 
