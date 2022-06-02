@@ -1,16 +1,7 @@
 empresa~ Coodesh, projeto de teste - readme
 ====
 
-* Deve conter o título do projeto
-* Uma descrição sobre o projeto em frase
-* Deve conter uma lista com linguagem, framework e/ou tecnologias usadas
-* Como instalar e usar o projeto (instruções)
-* Se está usando github pessoal, referencie que é um challenge by coodesh:
-	This is a challenge by Coodesh
-
-
 # srvSpacefl
-
 
 ## descrição
 Servidor de artigos da Spaceflight News (https://spaceflightnewsapi.net/).
