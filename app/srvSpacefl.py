@@ -87,6 +87,24 @@ async def ep_lista_articles(response: Response, id: str= '', publishedAt: str= '
 
 		relação de artigos
 
+		- id (str)
+		- title (str)
+		- featured (bool)
+		- url (str)		
+		- imageUrl (str)		
+		- newsSite (str)		
+		- summary (str)		
+		- publishedAt (str)
+		- launches (array)
+		
+			id: str 
+			provider: str
+			
+		- events (array):
+	
+			id: str 
+			provider: str
+
 	'''
 	
 	(sucesso, retorno) = await lista_articles(id, publishedAt, limite)
@@ -104,8 +122,8 @@ async def ep_inclui_article(response: Response, artigo: Artigo = Body(...)):
 	
 	Params
 	-------
+	- title (str, requerido)	
 	- featured (bool)
-	- title (str)	
 	- url (str)		
 	- imageUrl (str)		
 	- newsSite (str)		
@@ -155,8 +173,9 @@ async def ep_atualiza_article(response: Response, id: str, artigo: Artigo = Body
 
 	Params (body)
 	-------
+	- id (str)
+	- title (str, requerido)	
 	- featured (bool)
-	- title (str)	
 	- url (str)		
 	- imageUrl (str)		
 	- newsSite (str)		
