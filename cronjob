@@ -1,0 +1,2 @@
+* */9 * * * python3 /app/atualizaDB.py
+

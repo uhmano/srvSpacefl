@@ -1,0 +1,5 @@
+pymongo[srv]
+fastapi
+uvicorn
+requests
+pytest

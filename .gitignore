@@ -1,0 +1,11 @@
+__pycache__/
+*.py[cod]
+*$py.class
+app/*.log
+
+# ambiente do desenvolvedor original (pode ser removida/coloque as suas)
+.spyproject
+bak/
+cron/
+mais/
+
